@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "nombre": "Isaac",
+        "direccion": "Cenro Historico",
+        "telefono": "0961925772",
+        "edad": "21"
+    },
+    {
+        "id": "2",
+        "nombre": "Anthony",
+        "direccion": "sur",
+        "telefono": "0964273882",
+        "edad": "21"
+    },
+    {
+        "id": "3",
+        "nombre": "Alex",
+        "direccion": "Monjas",
+        "telefono": "09642736482",
+        "edad": "22"
+    },
+    {
+        "id": "4",
+        "nombre": "Belen",
+        "direccion": "san juan",
+        "telefono": "0969008305",
+        "edad": "29"
+    },
+    {
+        "id": "5",
+        "nombre": "Joshua",
+        "direccion": "recreo",
+        "telefono": "09743883383",
+        "edad": "23"
+    }
+    
+]
