@@ -22,7 +22,6 @@ router.post('/', (req, res) => {
         movies.push(newMovie);
         res.json(movies);
         res.send('Se ha guardado correctamente la pelicula');
-   
     }else if(!title){
           res.send('Falta ingresar el titulo');
     }else if(!director){
@@ -31,9 +30,34 @@ router.post('/', (req, res) => {
         res.send('Falta ingresar el año');
     }else if(!raiting){
         res.send('Falta ingresar el raiting');
+        
+    }
+});
+/*router.put('/:id', (req, res) => {
+   const{id}=req.params;
+    const { title, director, year, raiting } = req.body;
+    if(title && director && year && raiting){
+        _.each(movies, (movie, i) => {
+
+            if(movie.id===id){
+                movie.title===title;
+                movie.director===director;
+                movie.year===year;
+                movie.raiting ===raiting;
+            }
+            res.json(movies);
+            res.send('Los datos se han dictado correctamente')
+
+        
+
+    });
+
+    }else{
+        res.send('Los datos  no se han podido editar')
+
     }
 
-    
 
-});
+});*/
+
 module.exports = router;
