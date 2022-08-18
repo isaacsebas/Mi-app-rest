@@ -21,6 +21,7 @@ router.post('/', (req, res) => {
         users.push(newUsers);
         res.json(users);
         res.send('Se ha guardado correctamente los Usuarios');
+        //Validaciones
     }else if(!nombre){
           res.send('Falta ingresar el nombre');
     }else if(!direccion){
