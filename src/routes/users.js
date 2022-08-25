@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = new Router();
 const users =require('../example2.json');
-
+const _ = require('underscore');
 
 
 router.get('/', (req, res) => {
@@ -33,4 +33,34 @@ router.post('/', (req, res) => {
         
     }
 });
+router.put('/:id', (req, res) => {
+    const { id } = req.params;
+    const { nombre, direccion, telefono, edad } = req.body;
+    if (id && nombre && direccion && telefono && edad) {
+        _.each(users, (user) => {
+            if (user.id === id) {
+                user.nombre = nombre;
+                user.direccion = direccion;
+                user.telefono = telefono;
+                user.edad = edad;
+            }
+        });
+        res.json(users);
+    } else {
+       res.send('Los datos no se pueden editar');
+    }
+
+
+});
+
+router.delete('/:id',(req,res)=>{
+    const {id}=req.params;
+    _.each(users,(user,i)=>{
+       if(user.id==id){
+        user.splice(i,1);
+       }
+    });
+    res.send(users);
+});
+
 module.exports=router;

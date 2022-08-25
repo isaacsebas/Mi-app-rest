@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     res.json(movies);
 });
 
-router.post('/', (req, res) => {
+router.post('/', (req, res) => {z
     //Creación de id autoincrementable
     const id = movies.length + 1;
     const newMovie = { ...req.body, id };
@@ -49,6 +49,17 @@ router.put('/:id', (req, res) => {
     } else {
        res.send('Los datos no se pueden editar');
     }
+
+
 });
 
+router.delete('/:id',(req,res)=>{
+    const {id}=req.params;
+    _.each(movies,(movie,i)=>{
+       if(movie.id==id){
+        movies.splice(i,1);
+       }
+    });
+    res.send(movies);
+});
 module.exports = router;
